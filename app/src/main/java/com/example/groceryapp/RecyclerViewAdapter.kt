@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
@@ -19,6 +20,11 @@ class RecyclerViewAdapter(val items: ArrayList<ItemModel>, ):RecyclerView.Adapte
             imgView = itemView.findViewById(R.id.imgView)
             titleview = itemView.findViewById(R.id.title)
             descView = itemView.findViewById(R.id.desc)
+
+            itemView.setOnClickListener(){
+                Toast.makeText(itemView.context,
+                    "You choose: ${items[adapterPosition]}", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
